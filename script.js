@@ -9,7 +9,7 @@ var svg = d3.select("#my_dataviz")
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform",
-        "translate(" + margin.left + "," + margin.top + ")")
+        "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
 d3.csv("sentiment_result.csv",
@@ -48,7 +48,7 @@ d3.csv("sentiment_result.csv",
             .attr("transform", "rotate(-90)")
             .attr("y", -margin.left+30)
             .attr("x", -margin.top)
-            .text("Rang der Unzufriedenheit")
+            .text("Rang der Unzufriedenheit");
 
     // color palette
     //var res = sumstat.map(function(d){ return d.party }) // list of group names
@@ -90,7 +90,7 @@ d3.csv("sentiment_result.csv",
         document.getElementById(d.key).attributes.getNamedItem("stroke").value =colorFull(d.key);
         document.getElementById(d.key).attributes.getNamedItem("stroke-width").value =8;
 
-        img.src = d.key.charAt(0)+".jpg";
+        img.src = "images/"+d.key.charAt(0)+".jpg";
         img.height = "25";
         document.getElementById("tooltip_bottom").appendChild(img);
 
@@ -104,10 +104,10 @@ d3.csv("sentiment_result.csv",
             tooltip
                 .transition()
                 .duration(200)
-                .style("opacity", 0)
+                .style("opacity", 0);
             document.getElementById(d.key).attributes.getNamedItem("stroke").value =color(d.key);
             document.getElementById(d.key).attributes.getNamedItem("stroke-width").value =3;
-            document.getElementById("tooltip_bottom").removeChild(img)
+            document.getElementById("tooltip_bottom").removeChild(img);
             img.src = ""
         };
 
