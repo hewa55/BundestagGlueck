@@ -6,8 +6,5 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Negativ im Bundestag' });
 });
 
-router.get('/helloworld', function(req,res){
-  res.render('helloworld',{title: 'Hello, World!'})
-});
 
 module.exports = router;
