@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= "Negativ im Bundestag..."
+  body
+    section
+      p Ein Einblick in die Stimmung der Abgeordneten
+      p 6 = die meisten negativen Sätze der Sitzung
+  div(id="my_dataviz")
+  script(src="https://d3js.org/d3.v4.js")
+  script
+    include ../script.js
+
+  section
+    p Diese Analyse nutzt die offiziellen Stenografischen Berichte des Bundestags.
+    | Jedem Satz wird mit einem Abgeordneten und damit einer Partei getagt.
+    | Beiträge von Ministern und dem Präsidenten bzw Vizepräsidentinnen werden ignoriert.
+    | Jeder Satz wird auf Stimmung analysiert mithilfe des Python Pakets Textblob-de.
+    | Je höher der Rank in der Abbildung desto negativer war die Partei in der jeweiligen Sitzung.
