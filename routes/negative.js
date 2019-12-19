@@ -1,11 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* GET negative page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Stimmung im Bundestag' });
+  res.render('negative', { title: 'Stimmung im Bundestag' });
 });
-
-
-
 module.exports = router;
