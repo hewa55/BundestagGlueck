@@ -1,19 +1,122 @@
-extends layout
+doctype strict
 
-block content
-  h1= "Negativ im Bundestag..."
-  body
-    section
-      p Ein Einblick in die Stimmung der Abgeordneten
-      p 6 = die meisten negativen Sätze der Sitzung
-  div(id="my_dataviz")
-  script(src="https://d3js.org/d3.v4.js")
-  script
-    include ../visualization.js
+head
+  meta(http-equiv='Content-Type' content='text/html; charset=utf-8')
+  title
+  meta(name='keywords' content='')
+  meta(name='description' content='')
+  link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial' rel='stylesheet')
+  link(href='/stylesheets/default.css' rel='stylesheet' type='text/css' media='all')
+  link(href='/stylesheets/fonts.css' rel='stylesheet' type='text/css' media='all')
+  //if IE 6
+    link(href='default_ie6.css' rel='stylesheet' type='text/css')
+#header-wrapper
+  #header.container
+    #logo
+      span.icon.icon-cog
+      h1
+        a(href='#') Stibuta
+    #menu
+      ul
+        li.active
+          a(href='/' accesskey='1' title='') Willkommen
+        li
+          a(href='/negative' accesskey='2' title='') Stimmung
+        li
+          a(href='#' accesskey='3' title='') Abgeordnete
+        li
+          a(href='#' accesskey='4' title='') Thema
+        li
+          a(href='#' accesskey='5' title='') Get in touch!
+.wrapper
+  //#banner.containerForBanner
+    img(src='/images/banner2.jpg' width='800' height='500' alt='')
+  #welcome.container
+    .title
+      h2 Eine NLP Analyse des Bundestags
+    p
+      | Stibuta ist eine Plattform auf der verschiedene Analysen zur Sprache im Bundestag dargestellt werden.
+      | Diese Webseite ist derzeit noch in Arbeit, deshalb sind noch nicht alle Features voll vorhanden.
+      | Das wird sich im Laufe der Zeit noch ändern.
 
-  section
-    p Diese Analyse nutzt die offiziellen Stenografischen Berichte des Bundestags.
-    | Jedem Satz wird mit einem Abgeordneten und damit einer Partei getagt.
-    | Beiträge von Ministern und dem Präsidenten bzw Vizepräsidentinnen werden ignoriert.
-    | Jeder Satz wird auf Stimmung analysiert mithilfe des Python Pakets Textblob-de.
-    | Je höher der Rank in der Abbildung desto negativer war die Partei in der jeweiligen Sitzung.
+  #three-column.container
+    div
+      span.arrow-down
+    #tbox1
+      .title
+        h2 Stimmung im Bundestag
+      p
+        | Haben Sie sich schon mal gefragt welche Partei am Positivsten ist?
+      a.button(href='/negative') Mehr
+    #tbox2
+      .title
+        h2 Abgeordnete
+      p
+        | Welche Abgeordneten benutzen aggressive Töne am meisten?
+      a.button(href='#') Mehr
+    #tbox3
+      .title
+        h2 Themen im Bundestag
+      p
+        | Welche Themen polarisieren welche Parteien?
+      a.button(href='#') Mehr
+  //#portfolio.container
+    .column1
+      .box
+        h3 Vestibulum venenatis
+        p Fermentum nibh augue praesent a lacus at urna congue rutrum.
+        a.button.button-small(href='#') Etiam posuere
+    .column2
+      .box
+        h3 Praesent scelerisque
+        p Vivamus fermentum nibh in augue praesent urna congue rutrum.
+        a.button.button-small(href='#') Etiam posuere
+    .column3
+      .box
+        h3 Donec dictum metus
+        p Vivamus fermentum nibh in augue praesent urna congue rutrum.
+        a.button.button-small(href='#') Etiam posuere
+    .column4
+      .box
+        h3 Mauris vulputate dolor
+        p Rutrum fermentum nibh in augue praesent urna congue rutrum.
+        a.button.button-small(href='#') Etiam posuere
+//#footer
+  .container
+    .fbox1
+      span.icon.icon-map-marker
+      span
+        | 1234 Fictional Road Suite #789
+        br
+        | Nashville TN 00000
+    .fbox1
+      span.icon.icon-phone
+      span
+        | Telephone: +1 800 123 4657
+    .fbox1
+      span.icon.icon-envelope
+      span businessname@business.com
+#copyright
+  p
+    |  Content by
+    a(href='https://data-telegraph.blogspot.com/' rel='nofollow') Hendrik Walter
+    |
+    |  Design by
+    a(href='http://templated.co' rel='nofollow') TEMPLATED
+    |
+  ul.contact
+    li
+      a.icon.icon-twitter(href='#')
+        span Twitter
+    li
+      a.icon.icon-facebook(href='#')
+        span
+    li
+      a.icon.icon-dribbble(href='#')
+        span Pinterest
+    li
+      a.icon.icon-tumblr(href='#')
+        span Google+
+    li
+      a.icon.icon-rss(href='#')
+        span Pinterest

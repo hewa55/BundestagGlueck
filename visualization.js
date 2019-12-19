@@ -1,5 +1,5 @@
-var margin = {top: 10, right: 30, bottom: 30, left: 60},
-    width = 1200 - margin.left - margin.right,
+var margin = {top: 10, right: 30, bottom: 30, left: 50},
+    width = 1000 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -79,13 +79,15 @@ d3.csv("sentiment_result.csv",
         var img = document.createElement("IMG");
         // -2- Create 3 functions to show / update/ hide the tooltip
     var showTooltip = function(d) {
+            var x = d3.event.pageX;
+            var y = d3.event.pageY;
             tooltip
                 .transition()
                 .duration(200);
             tooltip
                 .style("opacity", 1)
-                .style("left", (d3.mouse(this)[0]) + "px")
-                .style("top", (d3.mouse(this)[1]) + "px");
+                .style("left", x-10 + "px")
+                .style("top", y-10 + "px");
                 //.style("background-color",colorFull(d.key));
         document.getElementById(d.key).attributes.getNamedItem("stroke").value =colorFull(d.key);
         document.getElementById(d.key).attributes.getNamedItem("stroke-width").value =8;
@@ -96,9 +98,10 @@ d3.csv("sentiment_result.csv",
 
         };
         var moveTooltip = function(d) {
+
             tooltip
-                .style("left", (d3.mouse(this)[0]+90) + "px")
-                .style("top", (d3.mouse(this)[1]+95) + "px");
+                .style("left", d3.event.pageX  + "px")
+                .style("top", d3.event.pageY + "px");
         };
         var hideTooltip = function(d) {
             tooltip

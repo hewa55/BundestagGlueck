@@ -1,0 +1,71 @@
+doctype strict
+
+head
+  meta(http-equiv='Content-Type' content='text/html; charset=utf-8')
+  title
+  meta(name='keywords' content='')
+  meta(name='description' content='')
+  link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial' rel='stylesheet')
+  link(href='/stylesheets/default.css' rel='stylesheet' type='text/css' media='all')
+  link(href='/stylesheets/fonts.css' rel='stylesheet' type='text/css' media='all')
+  //if IE 6
+    link(href='default_ie6.css' rel='stylesheet' type='text/css')
+#header-wrapper
+  #header.container
+    #logo
+      span.icon.icon-cog
+      h1
+        a(href='#') Stibuta
+    #menu
+      ul
+        li
+          a(href='/' accesskey='1' title='') Willkommen
+        li.active
+          a(href='#' accesskey='2' title='') Stimmung
+        li
+          a(href='#' accesskey='3' title='') Abgeordnete
+        li
+          a(href='#' accesskey='4' title='') Thema
+        li
+          a(href='#' accesskey='5' title='') Get in touch!
+.wrapper
+  //#banner.containerForBanner
+    img(src='/images/banner2.jpg' width='800' height='500' alt='')
+  #welcome.container
+    .title
+      h2 Die Stimmung aus der Negativperspektive
+    p 6 = Die meisten negative Sätze
+    div(id="my_dataviz")
+      script(src="https://d3js.org/d3.v4.js")
+      script
+        include ../visualization.js
+    p Diese Analyse nutzt die offiziellen Stenografischen Berichte des Bundestags.
+    p Jedem Satz wird ist dem Abgeordneten und der Partei zugewiesen. Es wird über die Partei aggregiert.
+    | Beiträge von Ministern und dem Präsidenten bzw Vizepräsidentinnen werden ignoriert.
+    | Jeder Satz wird auf Stimmung analysiert mithilfe des Python Pakets Textblob-de.
+    | Je höher der Rank in der Abbildung desto negativer war die Partei in der jeweiligen Sitzung.
+
+#copyright
+  p
+    |  Content by
+    a(href='https://data-telegraph.blogspot.com/' rel='nofollow') Hendrik Walter
+    |
+    |  Design by
+    a(href='http://templated.co' rel='nofollow') TEMPLATED
+    |
+  ul.contact
+    li
+      a.icon.icon-twitter(href='#')
+        span Twitter
+    li
+      a.icon.icon-facebook(href='#')
+        span
+    li
+      a.icon.icon-dribbble(href='#')
+        span Pinterest
+    li
+      a.icon.icon-tumblr(href='#')
+        span Google+
+    li
+      a.icon.icon-rss(href='#')
+        span Pinterest
